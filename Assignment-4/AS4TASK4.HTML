@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic CSS</title>
+    <style>
+        .text-here {
+            font-size: 55px;
+            font-family: sans-serif;
+            color: black;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-here" id="text-container">This is some example text</div>
+
+    <input type="text" id="colorbox" placeholder="Enter color">
+    <button onclick="changeColor()">Change Colour</button>
+
+    <br><br>
+
+    <input type="range" id="fontsize" min="10" max="100" value="55" oninput="changeFontSize()">
+    
+    <br><br>
+
+    <button onclick="toggleStyle('fontStyle', 'italic', 'normal')">Italics</button>
+    <button onclick="toggleStyle('textDecoration', 'underline', 'none')">Underline</button>
+    <button onclick="toggleStyle('fontWeight', 'bold', 'normal')">Bold</button>
+
+    <br><br>
+
+    <select id="list" onchange="changeFontFamily()">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+    </select>
+
+    <br><br>
+    
+    <button onclick="getStyles()">Get CSS</button>
+    <br><br>
+    <p id="css-props"></p>
+
+    <script>
+        let text = document.getElementById('text-container');
+
+        function changeColor() {
+            text.style.color = document.getElementById('colorbox').value;
+        }
+
+        function changeFontSize() {
+            text.style.fontSize = document.getElementById('fontsize').value + 'px';
+        }
+
+        function toggleStyle(property, value1, value2) {
+            text.style[property] = text.style[property] === value1 ? value2 : value1;
+        }
+
+        function changeFontFamily() {
+            text.style.fontFamily = document.getElementById('list').value;
+        }
+
+        function getStyles() {
+            document.getElementById('css-props').innerHTML = `
+                Font Size: ${text.style.fontSize}<br>
+                Font Style: ${text.style.fontStyle}<br>
+                Font Weight: ${text.style.fontWeight}<br>
+                Font Family: ${text.style.fontFamily}<br>
+                Text Decoration: ${text.style.textDecoration}<br>
+                Color: ${text.style.color}`;
+        }
+    </script>
+</body>
+</html>

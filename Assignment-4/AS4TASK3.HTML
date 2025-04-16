@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Show Para</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>I am a headline made with HTML</h1>
+    <br />
+    <p id="useless-paragraph">Useless paragraph.</p>
+    <br />
+    <button id="toggle-btn">Toggle Button</button>
+    
+    <script>
+        document.getElementById("toggle-btn").addEventListener("click", function() {
+            document.getElementById("useless-paragraph").classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Div</title>
+    <style>
+      .new-div {
+        background-color: lightblue;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <button id="addDivBtn">Add Div</button>
+    <script>
+      document.getElementById("addDivBtn").addEventListener("click", function () {
+        createDiv(200, 100, "A div is created!");
+      });
+
+      function createDiv(width, height, text) {
+        const container = document.getElementById("container");
+        const newDiv = document.createElement("div");
+        newDiv.className = "new-div";
+        Object.assign(newDiv.style, {
+          width: `${width}px`,
+          height: `${height}px`,
+        });
+        newDiv.textContent = text;
+        container.appendChild(newDiv);
+      }
+    </script>
+  </body>
+</html>
