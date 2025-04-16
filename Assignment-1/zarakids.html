@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Product Listing</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Heading 1 Styles */
+    h1 {
+      font-family: Calibri; /* Change font family */
+      color: black;
+      margin-top: 10px; 
+      margin-left: 200px;  
+    }
+
+    /* Heading 2 Styles */
+    h5 {
+      font-family: Calibri Light (Headings); /* Change font family */
+      color: black ; /* Change font color */
+       
+      margin-left: 200px;
+    }
+    h5 {
+      font-family: Calibri Light (Headings); /* Change font family */
+      color: black ; /* Change font color */
+      margin-top: 10px; 
+      margin-left: 200px;
+    }
+
+    /* Product Card Styles */
+    .product-card {
+      margin-bottom: 20px;
+    }
+
+    /* Product Price Styles */
+    .product-price {
+      color: black; /* Change price font color */
+    }
+
+    body {
+      background-color: rgb(218, 215, 213); /* Change background color */
+    }
+    .logo-img {
+      margin-top: 20px; /* Adjust the margin from the top */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; /* Adjust the margin from the top */
+    }
+    .slider {
+      width: 100%;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+    }
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .button-container {
+    text-align: center;
+    margin-bottom: 100px;
+    padding-left: 350px;
+  }
+
+  .button-container .btn {
+    margin: 0 10px; /* Adjust as needed */
+    background-color: brown;
+    
+  }
+
+    
+    
+    
+  </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/640px-Zara_Logo.svg.png" width="200" height="100"  class="logo-img"
+
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form class="my-3">
+              <div class="input-group">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <h1 class="my-4">KIDS</h1>
+
+      <div class="slider-container">
+        <div class="slides">
+          <div class="slide">
+              <img src="https://static.zara.net/assets/public/cfb6/762e/7b7a4b3284f2/681a28eadd6c/02599614712-300-p/02599614712-300-p.jpg?ts=1713364199220&w=563"  width="600" height="600" alt="FASHIONISTA">
+          </div>
+          <div class="slide">
+            <img src="https://static.zara.net/assets/public/5e84/6447/78c14b9b9321/a39c9484a5fc/01639509520-500-ult1/01639509520-500-ult1.jpg?ts=1713441545647&w=1554" width="700" height="500" alt="Image 2">
+          </div>
+          <div class="slide">
+            <img src="https://static.zara.net/assets/public/33fc/95f0/667c45beae42/e97ca0b9391f/01529750612-500-ult1/01529750612-500-ult1.jpg?ts=1713441495670&w=1554" width="500" height="500" alt="Image 3">
+          </div>
+        </div>
+      </div>
+      <script>
+        let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      
+      const showSlide = index => slides.forEach((slide, i) => slide.style.display = i === index ? 'block' : 'none');
+      const nextSlide = () => showSlide(currentSlide = (currentSlide + 1) % totalSlides);
+      const prevSlide = () => showSlide(currentSlide = (currentSlide - 1 + totalSlides) % totalSlides);
+      
+      setInterval(nextSlide, 3000);
+      </script>    
+
+      
+
+
+<p style="font-family: Times New Roman; color: black; font-size: 28px; margin-top: 10px; margin-left: 200px ;">SHIRTS</p>
+
+  <!-- Product Listing -->
+  <div class="container">
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="https://static.zara.net/assets/public/9cc5/5cba/193a41e38cd7/2fe42ca2edcf/01608500043-e1/01608500043-e1.jpg?ts=1707144566376&w=563" width="300" height="300" alt="Product 1">
+          <div class="card-body">
+            <p  class="card-text product-price">SEAWEED PRINT SHIRT</P>
+            <p  class="card-text product-price">Rs 1800.00</P>
+            <P  class="card-text product-price">Sale: 10%</P>
+            <a  href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+            <a href="#" class="btn btn-secondary" style="background-color: black;">Add to cart</a>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="https://static.zara.net/assets/public/4d30/aa47/af5c4064aa7c/c65f87abdb2f/03182680400-e1/03182680400-e1.jpg?ts=1709564495648&w=563" width="300" height="300" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            
+            
+            <p class="card-text product-price">PRINTED COTTON AND LINEN BLEND </p>
+            <p class="card-text product-price">Rs 1999.00</p>
+            <p class="card-text product-price">Sale: 5% off </p>
+
+            <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+            <a href="#" class="btn btn-secondary" style="background-color: black;">Add to cart</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more product cards as needed -->
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="https://static.zara.net/assets/public/dc1f/f3a0/4a8e4dd98fbd/632c94f03d72/02599614712-e1/02599614712-e1.jpg?ts=1712562236487&w=563" width="300" height="300"  alt="Product 2">
+          <div class="card-body">
+            
+            <p class="card-text product-price">ABSTRACT PRINT LINEN BLEND SHIRT</p>
+            <p class="card-text product-price">Rs 2400.00</p>
+            <p class="card-text product-price"> Sale:20% off</p>
+            <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+            <a href="#" class="btn btn-primary" style="background-color: black;">ADD TO CART</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <p style="font-family: 'Times New Roman', Times, serif; color: black; font-size: 28px; text-align: left;">Dress</p>
+
+      <div class="container">
+        <div class="row">
+          <!-- Product 1 -->
+          <div class="col-md-4">
+            <div class="card product-card">
+              <img src="https://static.zara.net/assets/public/cc5d/dd0c/3c1b4d148fc4/841052d4c290/01381632251-e1/01381632251-e1.jpg?ts=1709655207557&w=563" width="300" height="300" alt="Product 1">
+              <div class="card-body">
+                <p  class="card-text product-price">CROCHET FLORAL EMBROIDERED</P>
+                <p  class="card-text product-price">Rs 2590.00</P>
+                <P  class="card-text product-price">Sale: 10%</P>
+                <a  href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                <a href="#" class="btn btn-secondary" style="background-color: black;">ADD TO CART</a>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="col-md-4">
+            <div class="card product-card">
+              <img src="https://static.zara.net/assets/public/e3c9/b28a/0cf04e7ca1a9/5aad9c1e660d/04493611405-e1/04493611405-e1.jpg?ts=1712562239520&w=563" width="300" height="300" class="card-img-top" alt="Product 2">
+              <div class="card-body">
+                
+                
+                <p class="card-text product-price">RUFFLED DRESS WITH ELASTICATED</p>
+                <p class="card-text product-price">Rs 2000.00</p>
+                <p class="card-text product-price">Sale: 10% off </p>
+    
+                <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                <a href="#" class="btn btn-secondary" style="background-color: black;">ADD TO CART</a>
+                
+              </div>
+            </div>
+          </div>
+    
+          <!-- Add more product cards as needed -->
+          <div class="col-md-4">
+            <div class="card product-card">
+              <img src="https://static.zara.net/assets/public/9cd9/c3dc/469a457b97ca/210994873d03/01123279630-e1/01123279630-e1.jpg?ts=1709830951674&w=563" width="300" height="300"  alt="Product 2">
+              <div class="card-body">
+                
+                <p class="card-text product-price">FLORAL POPLIN DRESS</p>
+                <p class="card-text product-price">Rs 1200.00</p>
+                <p class="card-text product-price"> Sale:10% off</p>
+                <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                <a href="#" class="btn btn-primary" style="background-color: black;">ADD TO CART</a>
+                
+              </div>
+            </div>
+          </div>
+
+          <p style="font-family: 'Times New Roman', Times, serif; color: black; font-size: 28px; text-align: left;">SportsWear</p>
+
+          <div class="container">
+            <div class="row">
+              <!-- Product 1 -->
+              <div class="col-md-4">
+                <div class="card product-card">
+                  <img src="https://static.zara.net/assets/public/fe00/61e3/ebc64c49bd48/3ea969f383ee/02888409250-e1/02888409250-e1.jpg?ts=1708427189035&w=563" width="300" height="300" alt="Product 1">
+                  <div class="card-body">
+                    <p  class="card-text product-price">BASKETBALL TANK TOP</P>
+                    <p  class="card-text product-price">Rs 2100.00</P>
+                    <P  class="card-text product-price">Sale: 20%</P>
+                    <a  href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                    <a href="#" class="btn btn-secondary" style="background-color: black;">ADD TO CART</a>
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- Product 2 -->
+              <div class="col-md-4">
+                <div class="card product-card">
+                  <img src="https://static.zara.net/assets/public/718b/07e3/c3e34dd58426/8b6b7a23cb22/00679410060-e1/00679410060-e1.jpg?ts=1709712713722&w=245" width="300" height="300" class="card-img-top" alt="Product 2">
+                  <div class="card-body">
+                    
+                    
+                    <p class="card-text product-price">SWEATSHIRT WITH CONTRAST STRIPES </p>
+                    <p class="card-text product-price">Rs 4900.00</p>
+                    <p class="card-text product-price">Sale: 30% off </p>
+        
+                    <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                    <a href="#" class="btn btn-secondary" style="background-color: black;">ADD TO CART</a>
+                    
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Add more product cards as needed -->
+              <div class="col-md-4">
+                <div class="card product-card">
+                  <img src="https://static.zara.net/assets/public/d07c/cdb9/01034f059413/55e6b8efa4b4/05575471400-e1/05575471400-e1.jpg?ts=1707295832894&w=563" width="300" height="300"  alt="Product 2">
+                  <div class="card-body">
+                    
+                    <p class="card-text product-price">UTILITY JEANS WITH POCKETS</p>
+                    <p class="card-text product-price">Rs 2999.00</p>
+                    <p class="card-text product-price"> Sale:10% off</p>
+                    <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                    <a href="#" class="btn btn-primary" style="background-color: black;">ADD TO CART</a>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="container">
+                <div class="row">
+                  <!-- Product 1 -->
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <img src="https://static.zara.net/assets/public/8c01/02bf/15ba4b539a67/28df1eea2fe7/05320400800-e1/05320400800-e1.jpg?ts=1705501750628&w=245" width="300" height="300" alt="Product 1">
+                      <div class="card-body">
+                        <p  class="card-text product-price">WORKOUT T-SHIRT</P>
+                        <p  class="card-text product-price">Rs 999.00</P>
+                        <P  class="card-text product-price">Sale: 10%</P>
+                        <a  href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                        <a href="#" class="btn btn-secondary" style="background-color: black;">ADD TO CART</a>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 2 -->
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <img src="https://static.zara.net/assets/public/f923/02b2/27874d1c9cd5/2836f2e01cfe/02888410800-e1/02888410800-e1.jpg?ts=1708427202606&w=245" width="400" height="300" class="card-img-top" alt="Product 2">
+                      <div class="card-body">
+                        
+                        
+                        <p class="card-text product-price">BASKETBALL SHORT
+
+                        </p>
+                        <p class="card-text product-price">Rs 1299.00</p>
+                        <p class="card-text product-price">Sale: 10% off </p>
+            
+                        <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                        <a href="#" class="btn btn-secondary" style="background-color: black;">ADD TO CART</a>
+                        
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- Add more product cards as needed -->
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <img src="https://static.zara.net/assets/public/6dda/2103/abb244b49318/b34a46c6c59d/02888408250-e1/02888408250-e1.jpg?ts=1706265958624&w=245" width="300" height="300"  alt="Product 2">
+                      <div class="card-body">
+                        
+                        <p class="card-text product-price">AMERICAN FOOTBALL T-SHIRT
+
+                        </p>
+                        <p class="card-text product-price">Rs 1500.00</p>
+                        <p class="card-text product-price"> Sale:5% off</p>
+                        <a href="#" class="btn btn-primary" style="background-color: black;">BUY</a>
+                        <a href="#" class="btn btn-primary" style="background-color: black;">ADD TO CART</a>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-container">
+                    <a href="homepage.html" class="btn btn-secondary">HOME</a>
+                    <a href="zaramen.html" class="btn btn-secondary">MENS</a>
+                    <a href="zaramen.html" class="btn btn-secondary">WOMENS</a>
+                    <a href="zarakids.html" class="btn btn-secondary">KIDS</a>
+                  </div>
+
+      
+      
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional, if you need JS functionality) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
